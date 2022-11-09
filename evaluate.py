@@ -12,7 +12,7 @@ def plot_residuals(y,yhat):
     plt.show()
 
 def regression_errors(y,yhat):
-    residual = yhat - y
+    residual = y - yhat
     residual_sq = residual ** 2
     SSE = sum(residual_sq)
     MSE = SSE/len(y)
@@ -22,7 +22,7 @@ def regression_errors(y,yhat):
     return('SSE = ',SSE,'MSE = ',MSE, 'RMSE = ',RMSE,'ESS = ',ESS,'TSS = ',TSS)
 def baseline_mean_errors(y):
     baseline = y.mean()
-    residual = baseline - y
+    residual = y - baseline
     residual_sq = residual ** 2
     SSE = sum(residual_sq)
     MSE = SSE/len(y)
