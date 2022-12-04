@@ -83,6 +83,7 @@ def correlation_stat_test(df,column):
     print(f'p = {p}')
 
 def boxplots(df,theme,n_clust,chosen_clust):
+    ''' This function will create a boxplot for visualization'''
     kmeans = KMeans(n_clusters= n_clust, random_state = 123)
     kmeans.fit(df[theme])
     df['cluster'] = kmeans.predict(df[theme])
@@ -93,6 +94,7 @@ def boxplots(df,theme,n_clust,chosen_clust):
     plt.show()
 
 def ttest(df,theme,n_clust,chosen_clust):
+    ''' This function will return the results of a ttest run on the samples fed into it'''
     alpha = .05
     kmeans = KMeans(n_clusters= n_clust, random_state = 123)
     kmeans.fit(df[theme])
